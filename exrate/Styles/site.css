@@ -1,0 +1,243 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Custom container 
+ -------------------------------------------------------*/
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+.container > hr {
+    margin: 20px 0;
+}
+
+/* Customize the navbar links to be fill the entire space of the .navbar 
+ --------------------------------------------------------*/
+.navbar .navbar-inner {
+    padding: 0;
+}
+.navbar .nav {
+    margin: 0;
+    display: table;
+    width: 100%;
+}
+.navbar .nav li {
+    display: table-cell;
+    width: 1%;
+    float: none;
+}
+.navbar .nav li a {
+    font-weight: bold;
+    text-align: center;
+    /*border-left: 1px solid rgba(255,255,255,.75);*/
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+.navbar .nav li:first-child a {
+    border-left: 0;
+    border-radius: 3px 0 0 3px;
+}
+.navbar .nav li:last-child a {
+    border-right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Supporting marketing content 
+ --------------------------------------------------------*/
+.marketing {
+    margin: 60px 0;
+}
+.marketing p + h4 {
+    margin-top: 28px;
+}
+
+/* Hack for bootstrap's icons
+ --------------------------------------------------------*/
+[class^="icon-"] {
+margin-top: 3px;
+}
+
+/* City select style
+ --------------------------------------------------------*/
+.select-wrapper select {
+    position:absolute;
+    margin:-2px 0px 0px -5px;
+    width: 100px;
+    opacity: 0;
+}
+span.city {
+    color:#0066cc;
+    border-bottom: #000 1px dashed;   
+}
+div.masthead div.nav {
+    margin: 10px 0 0 0;
+}
+
+/* Main rate table
+ --------------------------------------------------------*/
+table.table-rate {
+    width: 100%;
+    font-size: 12pt;
+}
+table.table-rate td {
+    text-align: center;
+    vertical-align: middle;
+    height: 40px;
+    padding: 3px;
+}
+img.rate {
+    vertical-align: top;
+    padding-top: 3px;
+}
+table.table-rate thead th{
+    font-size: 12pt;
+    text-align: center;
+}
+div.rtable-wrapper { width: 45%; float: left }
+div.rtable-wrapper div.btn-group { padding-bottom: 10px; }
+div.rdate {
+    float: right; 
+    padding-top: 15px;
+    font-style: italic;
+}
+
+/* Central bank rates
+ --------------------------------------------------------*/
+div.cb-rates {
+    text-align: center;
+    font-size: 16pt;
+    padding-bottom: 25px;
+}
+.cb-rate { font-weight: 600 }
+.cb-diff {
+    vertical-align: super;
+    font-size: 10pt;
+}
+
+/* Ruble sign
+ --------------------------------------------------------*/
+img.ruble-img { height: 1.5ex; }
+span.dot { position:absolute; text-indent: -1000em; }
+
+/* Exchange form
+ --------------------------------------------------------*/
+.exchange-form {
+    border-radius: 10px;
+    width: 400px;
+    height: 170px;
+    float: right;
+}
+.exchange-label {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 12pt;
+    font-style: italic;
+}
+.input-value { padding: 70px 0 0 8px; }
+#inputValue {
+    font-size: 12pt;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Banks page
+ --------------------------------------------------------*/
+.banks-table th {
+    text-align: center;
+}
+.banks-table td {
+    text-align: center;
+    vertical-align: middle;
+    height: 45px;
+}
+#btable tbody tr { cursor: pointer }
+
+.img-thumb120 { width: 120px }
+
+/* Bank page
+ --------------------------------------------------------*/
+#map_canvas {
+    width: 70%; 
+    height: 400px;
+    text-align: center;
+}
+.table-bank-rate { width: 200px }
+.table-bank-rate td { text-align: center }
+.bank-logo { margin: 10px 20px 10px 0; width: 200px}
+.bank-site { padding: 0 0 27px 0}
+.infobox { line-height: 50px}
+
+/* Main page
+ --------------------------------------------------------*/
+.main-wrapper {
+    width: 100%;
+}
+h3.muted { color: black }
+h3.muted span { color: Crimson }
+img.width100 { width: 100px}
+#main-rtable { margin-bottom: 5px;min-height: 100px}
+#main-rtable tbody tr { cursor: pointer; }
+
+/* Statistics page
+ --------------------------------------------------------*/
+#rtable { margin-bottom: 5px;}
+#rtable tbody tr { cursor: pointer }

@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ExRatesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="ExRatesModelStoreContainer">
+          <EntitySet Name="Address" EntityType="ExRatesModel.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Bank" EntityType="ExRatesModel.Store.Bank" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="City" EntityType="ExRatesModel.Store.City" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currency" EntityType="ExRatesModel.Store.Currency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Rate" EntityType="ExRatesModel.Store.Rate" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Address_Bank" Association="ExRatesModel.Store.FK_Address_Bank">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_City" Association="ExRatesModel.Store.FK_Address_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Bank" Association="ExRatesModel.Store.FK_Rate_Bank">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_City" Association="ExRatesModel.Store.FK_Rate_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Currency" Association="ExRatesModel.Store.FK_Rate_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Bank" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="Latitude" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Longitude" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="ShortName" />
+          </Key>
+          <Property Name="ShortName" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Logo_small" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Logo_big" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="255" />
+          <Property Name="CitiesIds" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="NameENG" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NameRUS" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Latitude" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Longitude" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="UTCOffset" Type="int" Nullable="false" />
+          <Property Name="MapZoom" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ISO" />
+          </Key>
+          <Property Name="ISO" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="Code" Type="smallint" Nullable="false" />
+          <Property Name="NameENG" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NameRUS" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Value" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="Bank" Type="nvarchar" Nullable="false" MaxLength="3" />
+          <Property Name="CityId" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Buy" Type="decimal" Nullable="false" Scale="4" />
+          <Property Name="Sell" Type="decimal" Nullable="false" Scale="4" />
+        </EntityType>
+        <Association Name="FK_Address_Bank">
+          <End Role="Bank" Type="ExRatesModel.Store.Bank" Multiplicity="1" />
+          <End Role="Address" Type="ExRatesModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="ShortName" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_City">
+          <End Role="City" Type="ExRatesModel.Store.City" Multiplicity="1" />
+          <End Role="Address" Type="ExRatesModel.Store.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Bank">
+          <End Role="Bank" Type="ExRatesModel.Store.Bank" Multiplicity="1" />
+          <End Role="Rate" Type="ExRatesModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="ShortName" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="Bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_City">
+          <End Role="City" Type="ExRatesModel.Store.City" Multiplicity="1" />
+          <End Role="Rate" Type="ExRatesModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Currency">
+          <End Role="Currency" Type="ExRatesModel.Store.Currency" Multiplicity="1" />
+          <End Role="Rate" Type="ExRatesModel.Store.Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="ISO" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="Value" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetBankRates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Bank" Type="nvarchar" Mode="In" />
+          <Parameter Name="CityId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetBanks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CityId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetChartsInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Currency" Type="nvarchar" Mode="In" />
+          <Parameter Name="CityId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetTodayRates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Limit" Type="int" Mode="In" />
+          <Parameter Name="Currency" Type="nvarchar" Mode="In" />
+          <Parameter Name="CityId" Type="int" Mode="In" />
+          <Parameter Name="SortBy" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ExRatesModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="ExrateEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Address" EntityType="ExRatesModel.Address" />
+          <EntitySet Name="Bank" EntityType="ExRatesModel.Bank" />
+          <EntitySet Name="City" EntityType="ExRatesModel.City" />
+          <EntitySet Name="Currency" EntityType="ExRatesModel.Currency" />
+          <EntitySet Name="Rate" EntityType="ExRatesModel.Rate" />
+          <AssociationSet Name="FK_Address_Bank" Association="ExRatesModel.FK_Address_Bank">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Address_City" Association="ExRatesModel.FK_Address_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Address" EntitySet="Address" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Bank" Association="ExRatesModel.FK_Rate_Bank">
+            <End Role="Bank" EntitySet="Bank" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_City" Association="ExRatesModel.FK_Rate_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rate_Currency" Association="ExRatesModel.FK_Rate_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Rate" EntitySet="Rate" />
+          </AssociationSet>
+          <FunctionImport Name="GetBankRates" ReturnType="Collection(ExRatesModel.GetBankRates_Result)">
+            <Parameter Name="Bank" Mode="In" Type="String" />
+            <Parameter Name="CityId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetTodayRates" ReturnType="Collection(ExRatesModel.GetTodayRates_Result)">
+            <Parameter Name="Limit" Mode="In" Type="Int32" />
+            <Parameter Name="Currency" Mode="In" Type="String" />
+            <Parameter Name="CityId" Mode="In" Type="Int32" />
+            <Parameter Name="SortBy" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetChartsInfo" ReturnType="Collection(ExRatesModel.GetChartsInfo_Result)">
+            <Parameter Name="Currency" Mode="In" Type="String" />
+            <Parameter Name="CityId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetBanks" ReturnType="Collection(ExRatesModel.GetBanks_Result)">
+          <Parameter Name="CityId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Bank" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <Property Type="String" Name="Latitude" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Longitude" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address1" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Bank1" Relationship="ExRatesModel.FK_Address_Bank" FromRole="Address" ToRole="Bank" />
+          <NavigationProperty Name="City" Relationship="ExRatesModel.FK_Address_City" FromRole="Address" ToRole="City" />
+        </EntityType>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="ShortName" />
+          </Key>
+          <Property Type="String" Name="ShortName" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo_small" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Logo_big" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Website" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CitiesIds" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Address" Relationship="ExRatesModel.FK_Address_Bank" FromRole="Bank" ToRole="Address" />
+          <NavigationProperty Name="Rate" Relationship="ExRatesModel.FK_Rate_Bank" FromRole="Bank" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="NameENG" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NameRUS" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Latitude" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="String" Name="Longitude" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Type="Int32" Name="UTCOffset" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="ExRatesModel.FK_Address_City" FromRole="City" ToRole="Address" />
+          <NavigationProperty Name="Rate" Relationship="ExRatesModel.FK_Rate_City" FromRole="City" ToRole="Rate" />
+          <Property Type="Int32" Name="MapZoom" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="ISO" />
+          </Key>
+          <Property Type="String" Name="ISO" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="Int16" Name="Code" Nullable="false" />
+          <Property Type="String" Name="NameENG" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NameRUS" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Rate" Relationship="ExRatesModel.FK_Rate_Currency" FromRole="Currency" ToRole="Rate" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Value" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Bank" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CityId" Nullable="false" />
+          <Property Type="DateTime" Name="Date" Nullable="false" Precision="3" />
+          <Property Type="Decimal" Name="Buy" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Sell" Nullable="false" Precision="18" Scale="4" />
+          <NavigationProperty Name="Bank1" Relationship="ExRatesModel.FK_Rate_Bank" FromRole="Rate" ToRole="Bank" />
+          <NavigationProperty Name="City" Relationship="ExRatesModel.FK_Rate_City" FromRole="Rate" ToRole="City" />
+          <NavigationProperty Name="Currency" Relationship="ExRatesModel.FK_Rate_Currency" FromRole="Rate" ToRole="Currency" />
+        </EntityType>
+        <Association Name="FK_Address_Bank">
+          <End Type="ExRatesModel.Bank" Role="Bank" Multiplicity="1" />
+          <End Type="ExRatesModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="ShortName" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="Bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Address_City">
+          <End Type="ExRatesModel.City" Role="City" Multiplicity="1" />
+          <End Type="ExRatesModel.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Bank">
+          <End Type="ExRatesModel.Bank" Role="Bank" Multiplicity="1" />
+          <End Type="ExRatesModel.Rate" Role="Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bank">
+              <PropertyRef Name="ShortName" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="Bank" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_City">
+          <End Type="ExRatesModel.City" Role="City" Multiplicity="1" />
+          <End Type="ExRatesModel.Rate" Role="Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rate_Currency">
+          <End Type="ExRatesModel.Currency" Role="Currency" Multiplicity="1" />
+          <End Type="ExRatesModel.Rate" Role="Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="ISO" />
+            </Principal>
+            <Dependent Role="Rate">
+              <PropertyRef Name="Value" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="GetBankRates_Result">
+          <Property Type="String" Name="ValueName" Nullable="false" MaxLength="3" />
+          <Property Type="Decimal" Name="Buy" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Sell" Nullable="true" Precision="18" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="GetTodayRates_Result">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="BankCode" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Logo" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="LastUpdDt" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Buy" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Sell" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="BuyYday" Nullable="true" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="SellYday" Nullable="true" Precision="18" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="GetChartsInfo_Result">
+          <Property Type="String" Name="Bank" Nullable="false" MaxLength="3" />
+          <Property Type="DateTime" Name="Date" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="Buy" Nullable="false" Precision="18" Scale="4" />
+          <Property Type="Decimal" Name="Sell" Nullable="false" Precision="18" Scale="4" />
+        </ComplexType>
+        <ComplexType Name="GetBanks_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Code" Nullable="false" MaxLength="3" />
+          <Property Type="String" Name="Logo" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Website" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="AddrCount" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ExRatesModelStoreContainer" CdmEntityContainer="ExrateEntities">
+          <EntitySetMapping Name="Address">
+            <EntityTypeMapping TypeName="ExRatesModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="Address1" ColumnName="Address" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bank">
+            <EntityTypeMapping TypeName="ExRatesModel.Bank">
+              <MappingFragment StoreEntitySet="Bank">
+                <ScalarProperty Name="CitiesIds" ColumnName="CitiesIds" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Logo_big" ColumnName="Logo_big" />
+                <ScalarProperty Name="Logo_small" ColumnName="Logo_small" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="ExRatesModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="MapZoom" ColumnName="MapZoom" />
+                <ScalarProperty Name="UTCOffset" ColumnName="UTCOffset" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="NameRUS" ColumnName="NameRUS" />
+                <ScalarProperty Name="NameENG" ColumnName="NameENG" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currency">
+            <EntityTypeMapping TypeName="ExRatesModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="NameRUS" ColumnName="NameRUS" />
+                <ScalarProperty Name="NameENG" ColumnName="NameENG" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ISO" ColumnName="ISO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rate">
+            <EntityTypeMapping TypeName="ExRatesModel.Rate">
+              <MappingFragment StoreEntitySet="Rate">
+                <ScalarProperty Name="Sell" ColumnName="Sell" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetBankRates" FunctionName="ExRatesModel.Store.GetBankRates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ExRatesModel.GetBankRates_Result">
+                <ScalarProperty Name="ValueName" ColumnName="ValueName" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="Sell" ColumnName="Sell" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetTodayRates" FunctionName="ExRatesModel.Store.GetTodayRates">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ExRatesModel.GetTodayRates_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="LastUpdDt" ColumnName="LastUpdDt" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="Sell" ColumnName="Sell" />
+                <ScalarProperty Name="BuyYday" ColumnName="BuyYday" />
+                <ScalarProperty Name="SellYday" ColumnName="SellYday" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetChartsInfo" FunctionName="ExRatesModel.Store.GetChartsInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ExRatesModel.GetChartsInfo_Result">
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Buy" ColumnName="Buy" />
+                <ScalarProperty Name="Sell" ColumnName="Sell" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBanks" FunctionName="ExRatesModel.Store.GetBanks">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ExRatesModel.GetBanks_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="AddrCount" ColumnName="AddrCount" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

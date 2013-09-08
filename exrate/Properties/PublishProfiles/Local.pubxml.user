@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Зайцевы\Desktop\publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/18/2013 15:56:16</publishTime>
+    </File>
+    <File Include="bin/AutoMapper.dll">
+      <publishTime>07/19/2013 18:33:17</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>07/19/2013 10:53:56</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>07/18/2013 15:56:02</publishTime>
+    </File>
+    <File Include="bin/Exrate.dll">
+      <publishTime>09/05/2013 01:12:55</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>07/18/2013 19:35:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/19/2012 11:59:52</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/18/2013 15:56:13</publishTime>
+    </File>
+    <File Include="bin/Ninject.dll">
+      <publishTime>07/19/2013 11:48:42</publishTime>
+    </File>
+    <File Include="bin/NLog.config">
+      <publishTime>08/25/2013 12:52:33</publishTime>
+    </File>
+    <File Include="bin/NLog.dll">
+      <publishTime>07/20/2013 11:12:20</publishTime>
+    </File>
+    <File Include="bin/Quartz.dll">
+      <publishTime>07/19/2013 10:53:56</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Abstractions.dll">
+      <publishTime>07/09/2012 01:40:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/10/2012 22:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/18/2013 15:56:16</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>07/18/2013 15:56:15</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/17/2012 12:22:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.Routing.dll">
+      <publishTime>07/09/2012 01:40:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2012 13:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2012 13:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2012 13:03:34</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/18/2013 15:56:16</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/18/2013 15:55:50</publishTime>
+    </File>
+    <File Include="images/bank_logos/ABB.png">
+      <publishTime>08/12/2013 11:40:34</publishTime>
+    </File>
+    <File Include="images/bank_logos/ABB_big.png">
+      <publishTime>08/12/2013 11:40:40</publishTime>
+    </File>
+    <File Include="images/bank_logos/AFB.png">
+      <publishTime>08/12/2013 12:00:13</publishTime>
+    </File>
+    <File Include="images/bank_logos/AFB_big.png">
+      <publishTime>08/12/2013 11:35:25</publishTime>
+    </File>
+    <File Include="images/bank_logos/APB.png">
+      <publishTime>08/20/2013 16:46:23</publishTime>
+    </File>
+    <File Include="images/bank_logos/APB_big.png">
+      <publishTime>08/20/2013 16:46:23</publishTime>
+    </File>
+    <File Include="images/bank_logos/BMS.png">
+      <publishTime>08/27/2013 01:02:00</publishTime>
+    </File>
+    <File Include="images/bank_logos/BMS_big.png">
+      <publishTime>08/27/2013 01:02:00</publishTime>
+    </File>
+    <File Include="images/bank_logos/CBB.png">
+      <publishTime>08/12/2013 12:05:57</publishTime>
+    </File>
+    <File Include="images/bank_logos/CBB_big.png">
+      <publishTime>08/12/2013 12:06:23</publishTime>
+    </File>
+    <File Include="images/bank_logos/EUB.png">
+      <publishTime>08/12/2013 12:14:05</publishTime>
+    </File>
+    <File Include="images/bank_logos/EUB_big.png">
+      <publishTime>08/12/2013 12:14:37</publishTime>
+    </File>
+    <File Include="images/bank_logos/EXB.png">
+      <publishTime>08/24/2013 14:24:09</publishTime>
+    </File>
+    <File Include="images/bank_logos/EXB_big.png">
+      <publishTime>08/24/2013 14:23:13</publishTime>
+    </File>
+    <File Include="images/bank_logos/LBB.png">
+      <publishTime>08/24/2013 14:24:49</publishTime>
+    </File>
+    <File Include="images/bank_logos/LBB_big.png">
+      <publishTime>08/24/2013 13:49:34</publishTime>
+    </File>
+    <File Include="images/bank_logos/LGN.png">
+      <publishTime>08/24/2013 14:25:01</publishTime>
+    </File>
+    <File Include="images/bank_logos/LGN_big.png">
+      <publishTime>08/24/2013 14:09:23</publishTime>
+    </File>
+    <File Include="images/bank_logos/PSB.png">
+      <publishTime>08/12/2013 12:20:52</publishTime>
+    </File>
+    <File Include="images/bank_logos/PSB_big.png">
+      <publishTime>08/12/2013 12:17:52</publishTime>
+    </File>
+    <File Include="images/bank_logos/RSB.png">
+      <publishTime>08/24/2013 14:24:27</publishTime>
+    </File>
+    <File Include="images/bank_logos/RSB_big.png">
+      <publishTime>08/24/2013 14:17:29</publishTime>
+    </File>
+    <File Include="images/EUR.jpg">
+      <publishTime>07/31/2013 19:52:12</publishTime>
+    </File>
+    <File Include="images/exchange.png">
+      <publishTime>08/06/2013 09:41:13</publishTime>
+    </File>
+    <File Include="images/loading.gif">
+      <publishTime>08/16/2013 10:29:39</publishTime>
+    </File>
+    <File Include="images/out-of-date.png">
+      <publishTime>07/31/2013 10:33:48</publishTime>
+    </File>
+    <File Include="images/rate_down.png">
+      <publishTime>07/18/2013 19:07:17</publishTime>
+    </File>
+    <File Include="images/rate_up.png">
+      <publishTime>07/18/2013 17:46:48</publishTime>
+    </File>
+    <File Include="images/RUB.jpg">
+      <publishTime>07/31/2013 19:54:33</publishTime>
+    </File>
+    <File Include="images/ruble.gif">
+      <publishTime>08/01/2013 11:43:38</publishTime>
+    </File>
+    <File Include="images/USD.jpg">
+      <publishTime>07/31/2013 19:51:28</publishTime>
+    </File>
+    <File Include="Models/DbModel.edmx.diagram">
+      <publishTime>08/27/2013 22:43:52</publishTime>
+    </File>
+    <File Include="NLog.config">
+      <publishTime>08/25/2013 12:52:33</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/20/2013 11:21:09</publishTime>
+    </File>
+    <File Include="Scripts/accounting.js">
+      <publishTime>08/01/2013 12:51:57</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/30/2013 07:08:08</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/26/2013 19:50:48</publishTime>
+    </File>
+    <File Include="Scripts/cookie.js">
+      <publishTime>07/25/2013 22:12:59</publishTime>
+    </File>
+    <File Include="Scripts/director.js">
+      <publishTime>06/06/2013 06:43:32</publishTime>
+    </File>
+    <File Include="Scripts/html5shiv.js">
+      <publishTime>07/19/2013 14:37:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.0.3.js">
+      <publishTime>07/19/2013 14:37:08</publishTime>
+    </File>
+    <File Include="Scripts/jquery-scrolltofixed.js">
+      <publishTime>08/16/2013 15:46:55</publishTime>
+    </File>
+    <File Include="Scripts/knockout-2.3.0.js">
+      <publishTime>07/19/2013 14:37:08</publishTime>
+    </File>
+    <File Include="Scripts/vms/BankViewModel.js">
+      <publishTime>08/19/2013 23:30:20</publishTime>
+    </File>
+    <File Include="Scripts/vms/MainViewModel.js">
+      <publishTime>08/28/2013 08:55:16</publishTime>
+    </File>
+    <File Include="Scripts/vms/StatsViewModel.js">
+      <publishTime>08/28/2013 11:54:08</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>08/18/2013 14:39:16</publishTime>
+    </File>
+    <File Include="Styles/bootstrap/bootstrap-responsive.css">
+      <publishTime>05/17/2013 06:21:08</publishTime>
+    </File>
+    <File Include="Styles/bootstrap/bootstrap.css">
+      <publishTime>07/19/2013 11:07:15</publishTime>
+    </File>
+    <File Include="Styles/bootstrap/images/glyphicons-halflings-white.png">
+      <publishTime>05/17/2013 06:21:06</publishTime>
+    </File>
+    <File Include="Styles/bootstrap/images/glyphicons-halflings.png">
+      <publishTime>05/17/2013 06:21:06</publishTime>
+    </File>
+    <File Include="Styles/bootstrap/minified/bootstrap-responsive.min.css">
+      <publishTime>05/17/2013 06:21:08</publishTime>
+    </File>
+    <File Include="Styles/bootstrap/minified/bootstrap.min.css">
+      <publishTime>05/17/2013 06:21:08</publishTime>
+    </File>
+    <File Include="Styles/hint.css">
+      <publishTime>08/15/2013 14:53:20</publishTime>
+    </File>
+    <File Include="Styles/site.css">
+      <publishTime>08/27/2013 13:09:35</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/28/2013 16:11:18</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/18/2013 15:55:50</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/26/2013 12:28:01</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/18/2013 15:55:50</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/04/2013 19:32:55</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

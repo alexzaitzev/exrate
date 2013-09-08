@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e23ac9539b8b452084976636e3731b50" Name="Diagram1">
+        <EntityTypeShape EntityType="ExRatesModel.Address" Width="1.5" PointX="5.875" PointY="0.5" />
+        <EntityTypeShape EntityType="ExRatesModel.Bank" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="ExRatesModel.City" Width="1.5" PointX="3.125" PointY="1.375" />
+        <EntityTypeShape EntityType="ExRatesModel.Currency" Width="1.5" PointX="6" PointY="3.5" />
+        <EntityTypeShape EntityType="ExRatesModel.Rate" Width="1.5" PointX="3.125" PointY="5" />
+        <AssociationConnector Association="ExRatesModel.FK_Address_Bank" />
+        <AssociationConnector Association="ExRatesModel.FK_Address_City" />
+        <AssociationConnector Association="ExRatesModel.FK_Rate_Bank" />
+        <AssociationConnector Association="ExRatesModel.FK_Rate_City" />
+        <AssociationConnector Association="ExRatesModel.FK_Rate_Currency" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
