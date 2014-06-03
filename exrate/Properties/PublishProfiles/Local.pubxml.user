@@ -6,26 +6,26 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\Users\Зайцевы\Desktop\publish</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\Users\Alex\Documents\Visual Studio 2012\Projects\Exrate\publish</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>07/18/2013 15:56:16</publishTime>
     </File>
     <File Include="bin/AutoMapper.dll">
-      <publishTime>07/19/2013 18:33:17</publishTime>
+      <publishTime>02/01/2014 23:04:35</publishTime>
     </File>
     <File Include="bin/Common.Logging.dll">
-      <publishTime>07/19/2013 10:53:56</publishTime>
+      <publishTime>02/01/2014 23:04:38</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>07/18/2013 15:56:02</publishTime>
     </File>
     <File Include="bin/Exrate.dll">
-      <publishTime>09/05/2013 01:12:55</publishTime>
+      <publishTime>04/29/2014 23:20:50</publishTime>
     </File>
     <File Include="bin/HtmlAgilityPack.dll">
-      <publishTime>07/18/2013 19:35:56</publishTime>
+      <publishTime>02/01/2014 23:04:49</publishTime>
     </File>
     <File Include="bin/Microsoft.Web.Infrastructure.dll">
       <publishTime>07/19/2012 11:59:52</publishTime>
@@ -34,16 +34,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2013 15:56:13</publishTime>
     </File>
     <File Include="bin/Ninject.dll">
-      <publishTime>07/19/2013 11:48:42</publishTime>
+      <publishTime>02/01/2014 23:06:10</publishTime>
     </File>
     <File Include="bin/NLog.config">
-      <publishTime>08/25/2013 12:52:33</publishTime>
+      <publishTime>02/02/2014 21:44:09</publishTime>
     </File>
     <File Include="bin/NLog.dll">
-      <publishTime>07/20/2013 11:12:20</publishTime>
+      <publishTime>02/01/2014 23:06:16</publishTime>
     </File>
     <File Include="bin/Quartz.dll">
-      <publishTime>07/19/2013 10:53:56</publishTime>
+      <publishTime>02/01/2014 23:06:30</publishTime>
     </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
       <publishTime>07/10/2012 22:51:54</publishTime>
@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/18/2013 15:56:16</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>07/18/2013 15:55:50</publishTime>
+      <publishTime>09/08/2013 17:33:41</publishTime>
     </File>
     <File Include="images/bank_logos/ABB.png">
       <publishTime>08/12/2013 11:40:34</publishTime>
@@ -181,10 +181,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/31/2013 19:51:28</publishTime>
     </File>
     <File Include="Models/DbModel.edmx.diagram">
-      <publishTime>08/27/2013 22:43:52</publishTime>
+      <publishTime>04/22/2014 11:38:29</publishTime>
     </File>
     <File Include="NLog.config">
-      <publishTime>08/25/2013 12:52:33</publishTime>
+      <publishTime>02/02/2014 21:44:09</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>07/20/2013 11:21:09</publishTime>
@@ -220,10 +220,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/19/2013 23:30:20</publishTime>
     </File>
     <File Include="Scripts/vms/MainViewModel.js">
-      <publishTime>08/28/2013 08:55:16</publishTime>
+      <publishTime>02/02/2014 11:32:55</publishTime>
     </File>
     <File Include="Scripts/vms/StatsViewModel.js">
-      <publishTime>08/28/2013 11:54:08</publishTime>
+      <publishTime>04/22/2014 11:13:54</publishTime>
     </File>
     <File Include="Scripts/_references.js">
       <publishTime>08/18/2013 14:39:16</publishTime>
@@ -253,19 +253,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/27/2013 13:09:35</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>08/28/2013 16:11:18</publishTime>
+      <publishTime>02/02/2014 11:40:22</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>07/18/2013 15:55:50</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>08/26/2013 12:28:01</publishTime>
+      <publishTime>02/02/2014 11:38:41</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>07/18/2013 15:55:50</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/04/2013 19:32:55</publishTime>
+      <publishTime>04/29/2014 23:12:34</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -9,27 +9,27 @@
 
 namespace Exrate.Models
 {
-    using System;
-    using System.Collections.Generic;
-    
-    public partial class City
-    {
-        public City()
-        {
-            this.Address = new HashSet<Address>();
-            this.Rate = new HashSet<Rate>();
-        }
-    
-        public int Id { get; set; }
-        public string NameENG { get; set; }
-        public string NameRUS { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
-        public int UTCOffset { get; set; }
-        public int MapZoom { get; set; }
-        public bool IsActive { get; set; }
-    
-        public virtual ICollection<Address> Address { get; set; }
-        public virtual ICollection<Rate> Rate { get; set; }
-    }
+	using System;
+	using System.Collections.Generic;
+
+	public partial class City
+	{
+		public City()
+		{
+			this.Address = new HashSet<Address>();
+			this.Rate = new HashSet<Rate>();
+		}
+
+		public int Id { get; set; }
+		public string NameENG { get; set; }
+		public string NameRUS { get; set; }
+		public string Latitude { get; set; }
+		public string Longitude { get; set; }
+		public int UTCOffset { get; set; }
+		public int MapZoom { get; set; }
+		public bool IsActive { get; set; }
+
+		public virtual ICollection<Address> Address { get; set; }
+		public virtual ICollection<Rate> Rate { get; set; }
+	}
 }

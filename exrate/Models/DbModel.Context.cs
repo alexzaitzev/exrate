@@ -47,6 +47,28 @@ namespace Exrate.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetBankRates_Result>("GetBankRates", bankParameter, cityIdParameter);
         }
     
+        public virtual ObjectResult<GetBanks_Result> GetBanks(Nullable<int> cityId)
+        {
+            var cityIdParameter = cityId.HasValue ?
+                new ObjectParameter("CityId", cityId) :
+                new ObjectParameter("CityId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetBanks_Result>("GetBanks", cityIdParameter);
+        }
+    
+        public virtual ObjectResult<GetChartsInfo_Result> GetChartsInfo(string currency, Nullable<int> cityId)
+        {
+            var currencyParameter = currency != null ?
+                new ObjectParameter("Currency", currency) :
+                new ObjectParameter("Currency", typeof(string));
+    
+            var cityIdParameter = cityId.HasValue ?
+                new ObjectParameter("CityId", cityId) :
+                new ObjectParameter("CityId", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetChartsInfo_Result>("GetChartsInfo", currencyParameter, cityIdParameter);
+        }
+    
         public virtual ObjectResult<GetTodayRates_Result> GetTodayRates(Nullable<int> limit, string currency, Nullable<int> cityId, Nullable<int> sortBy)
         {
             var limitParameter = limit.HasValue ?
@@ -66,28 +88,6 @@ namespace Exrate.Models
                 new ObjectParameter("SortBy", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetTodayRates_Result>("GetTodayRates", limitParameter, currencyParameter, cityIdParameter, sortByParameter);
-        }
-    
-        public virtual ObjectResult<GetChartsInfo_Result> GetChartsInfo(string currency, Nullable<int> cityId)
-        {
-            var currencyParameter = currency != null ?
-                new ObjectParameter("Currency", currency) :
-                new ObjectParameter("Currency", typeof(string));
-    
-            var cityIdParameter = cityId.HasValue ?
-                new ObjectParameter("CityId", cityId) :
-                new ObjectParameter("CityId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetChartsInfo_Result>("GetChartsInfo", currencyParameter, cityIdParameter);
-        }
-    
-        public virtual ObjectResult<GetBanks_Result> GetBanks(Nullable<int> cityId)
-        {
-            var cityIdParameter = cityId.HasValue ?
-                new ObjectParameter("CityId", cityId) :
-                new ObjectParameter("CityId", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetBanks_Result>("GetBanks", cityIdParameter);
         }
     }
 }

@@ -1,5 +1,3 @@
 bin
 logs
 /exrate/*.config
-/exrate/Web.Debug.config
-/exrate/Web.Release.config

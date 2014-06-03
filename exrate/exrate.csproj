@@ -302,6 +302,7 @@
   <ItemGroup>
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <EntityDeploy Include="Models\DbModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

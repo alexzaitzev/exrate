@@ -1,20 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="e23ac9539b8b452084976636e3731b50" Name="Diagram1">
-        <EntityTypeShape EntityType="ExRatesModel.Address" Width="1.5" PointX="5.875" PointY="0.5" />
-        <EntityTypeShape EntityType="ExRatesModel.Bank" Width="1.5" PointX="0.5" PointY="0.5" />
-        <EntityTypeShape EntityType="ExRatesModel.City" Width="1.5" PointX="3.125" PointY="1.375" />
-        <EntityTypeShape EntityType="ExRatesModel.Currency" Width="1.5" PointX="6" PointY="3.5" />
-        <EntityTypeShape EntityType="ExRatesModel.Rate" Width="1.5" PointX="3.125" PointY="5" />
-        <AssociationConnector Association="ExRatesModel.FK_Address_Bank" />
-        <AssociationConnector Association="ExRatesModel.FK_Address_City" />
-        <AssociationConnector Association="ExRatesModel.FK_Rate_Bank" />
-        <AssociationConnector Association="ExRatesModel.FK_Rate_City" />
-        <AssociationConnector Association="ExRatesModel.FK_Rate_Currency" />
+      <Diagram DiagramId="7be24496503e4cccbcadc2b39d271651" Name="Diagram1">
+        <EntityTypeShape EntityType="ExrateModel.Address" Width="1.5" PointX="3.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExrateModel.Bank" Width="1.5" PointX="0.875" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExrateModel.City" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExrateModel.Currency" Width="1.5" PointX="4.375" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ExrateModel.Rate" Width="1.5" PointX="6.875" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="ExrateModel.FK_Address_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="ExrateModel.FK_Address_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ExrateModel.FK_Rate_Bank" ManuallyRouted="false" />
+        <AssociationConnector Association="ExrateModel.FK_Rate_City" ManuallyRouted="false" />
+        <AssociationConnector Association="ExrateModel.FK_Rate_Currency" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
